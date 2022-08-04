@@ -9,3 +9,18 @@
     box-sizing: border-box;
     padding: 36px 48px;
 }
+
+.link {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #3167BA;
+    text-decoration: none;
+    padding: 6px 0;
+}
+
+.link:hover {
+    color: #518ee9;
+}

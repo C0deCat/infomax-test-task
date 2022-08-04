@@ -1,8 +1,9 @@
 import React from 'react';
+import '../css/TextInput.css'
 
-function TextInput() {
+function TextInput(props) {
     return ( 
-        <input type="text" />
+        <input className='textInput' type="text" placeholder={props.placeholder}/>
      );
 }
 
