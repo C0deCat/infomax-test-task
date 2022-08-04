@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import Logo from '../components/Logo';
-import SignInForm from '../components/SignInForm';
-import '../css/signInRoute.css'
+import '../css/signInAuthRoute.css'
+import { Outlet } from "react-router-dom";
 
-class SignInRoute extends Component {
+class SignInAuthRoute extends Component {
   state = {  } 
+
   render() { 
     return (
       <div className='formBlock'>
         <Logo />
-        <SignInForm />
+        <Outlet />
       </div>
     );
   }
 }
  
-export default SignInRoute;
+export default SignInAuthRoute;

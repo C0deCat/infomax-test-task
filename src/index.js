@@ -1,20 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './css/index.css';
-import SignInRoute from './routes/SignInRoute';
+import SignInAuthRoute from './routes/SignInAuthRoute';
 import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
+import SignInForm from './components/SignInForm';
+import AuthForm from './components/AuthForm';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<SignInRoute />} />
+        <Route path='/*' element={<SignInAuthRoute />}>
+          <Route index element={<SignInForm />} />
+          <Route path='auth' element={<AuthForm />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
