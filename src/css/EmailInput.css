@@ -1,4 +1,5 @@
 .emailInput {
+    width: 100%;
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
@@ -36,3 +37,13 @@
     border: 1px solid #EE4141;
 }
 
+.emailInputContainer_errorMessage {
+    color: #EE4141;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    position: relative;
+    top: -10px;
+}

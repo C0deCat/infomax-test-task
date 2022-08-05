@@ -13,7 +13,7 @@ class SignInForm extends Component {
                 <EmailInput />
                 <PasswordInput />
                 <Button value="Войти в систему" />
-                <Link to="/auth" className='link'>Зарегистрироваться</Link>
+                <div className='formContainer_textCaption'><Link to="/auth" className='formContainer_link'>Зарегистрироваться</Link></div>
             </form>
          );
     }

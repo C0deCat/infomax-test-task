@@ -8,19 +8,34 @@
     border-radius: 2px;
     box-sizing: border-box;
     padding: 36px 48px;
-}
-
-.link {
     font-family: 'Open Sans';
     font-style: normal;
+}
+
+.formContainer_link {
     font-weight: 400;
     font-size: 14px;
     line-height: 19px;
     color: #3167BA;
     text-decoration: none;
-    padding: 6px 0;
 }
 
 .link:hover {
     color: #518ee9;
+}
+
+.formContainer_header {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    color: #404064;
+    margin: 0 0 20px 0;
+}
+
+.formContainer_textCaption {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #404064;
+    margin-top: 6px;
 }

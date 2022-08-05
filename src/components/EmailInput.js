@@ -12,14 +12,22 @@ class EmailInput extends React.Component {
         this.props.onEmailChange(e.target.value);
     }
 
-    render() { 
+    render() {
+        let classes = '';
+        if (this.props.isError) {
+            classes = classes.concat('emailInput__error')
+        } 
+
         return (
-            <input 
-                type="email" className='emailInput' 
-                placeholder={this.props.placeholder ? this.props.placeholder : "Электронная почта"}
-                onChange={this.handleChange}
-                value={this.props.value}
-            />
+            <div className='emailInputContainer'>
+                <input 
+                    type="email" className={'emailInput '.concat(classes)} 
+                    placeholder={this.props.placeholder ? this.props.placeholder : "Электронная почта"}
+                    onChange={this.handleChange}
+                    value={this.props.value}
+                />
+                <span className='emailInputContainer_errorMessage'>{this.props.isError ? this.props.ErrorMessage : ''}</span>
+            </div>
         );
     }
 }

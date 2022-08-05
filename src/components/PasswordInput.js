@@ -26,15 +26,20 @@ class PasswordInput extends React.Component {
     render() {
         const type = this.state.isVisible ? "text" : "password";
         const visibilityIcon = this.state.isVisible ? "passwordVisible" : "passwordInvisible";
+        let classes = '';
+        if (this.props.isError) {
+            classes = classes.concat('passwordInput__error')
+        } 
         return ( 
             <div className='passwordContainer'>
             <input 
-                type={type} className='passwordInput' 
+                type={type} className={'passwordInput '.concat(classes)} 
                 placeholder={this.props.placeholder ? this.props.placeholder : "Пароль"}
                 value={this.props.value}
                 onChange={this.handleChange}
             />
             <span className={'passwordVisibilityToggle '.concat(visibilityIcon)} onClick={this.handleClick}></span>
+            <span className='passwordContainer_errorMessage'>{this.props.isError ? this.props.ErrorMessage : ''}</span>
             </div>
         );
     }
