@@ -38,6 +38,7 @@ class AuthForm extends Component {
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.handleConfirmationPasswordChange = this.handleConfirmationPasswordChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleFirstNameChange(firstName) {
@@ -88,6 +89,34 @@ class AuthForm extends Component {
         });
     }
 
+    handleSubmit(e) {
+        e.preventDefault();
+        //вынести адрес api в env переменную и перенести на async/await
+        this.setState(prevState => ({
+            firstName: {
+                value: prevState.firstName.value,
+                isValid: prevState.firstName.value.trim() !== '',
+            },
+            lastName: {
+                value: prevState.lastName.value,
+                isValid: prevState.lastName.value.trim() !== '',
+            },
+            email: {
+                value: prevState.email.value,
+                isValid: this.validateEmail(prevState.email.value),
+            },
+            password: {
+                value: prevState.password.value,
+                isValid: this.validatePassword(prevState.password.value),
+            },
+            confirmationPassword: {
+                value: prevState.confirmationPassword.value,
+                isConfirmed: prevState.password.value === prevState.confirmationPassword.value,
+            },
+        }), this.sendRequest);
+        //Проверка данных перед введением
+    }
+
     validatePassword(password) {
         if (password.match(/[a-z]/g) && password.match(/[A-Z]/g) && password.match(/[0-9]/g) && password.match(/[^a-zA-Z0-9]/g)
         && password.length >= 8) {
@@ -108,13 +137,42 @@ class AuthForm extends Component {
         }
     }
 
+    sendRequest() {
+        const isFormValid = this.state.firstName.isValid 
+        && this.state.lastName.isValid 
+        && this.state.email.isValid 
+        && this.state.password.isValid 
+        && this.state.confirmationPassword.isConfirmed;
+
+        if(isFormValid) {
+            fetch('http://localhost:4000/api', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    query: `
+                    mutation {
+                        signup(firstName: "${this.state.firstName.value}", secondName: "${this.state.lastName.value}", email: "${this.state.email.value}", password: "${this.state.password.value}")
+                    }
+                    `,
+                }),
+            })
+            .then((res) => res.json())
+            .then((result) => console.log(result));
+        } 
+        else {
+            console.log("Fuck u!")
+        }
+    }
+
     render() {
         const nameErrorMessage = "Поле не должно быть пустым!"
         const emailErrorMessage = "Некорректно введен Email!"
         const passwordErrorMessage = "Пароль должен содержать минимум восемь символов, цифры, строчные и заглавные буквы и небуквенные символы (!, @, ? и т.п.)";
         const confirmPasswordErrorMessage = "Пароли не одинаковы!"; 
         return ( 
-            <form className='formContainer'>
+            <form className='formContainer' onSubmit={this.handleSubmit}>
                 <h1 className='formContainer_header'>Регистрация</h1>
                 <TextInput placeholder="Имя" value={this.state.firstName.value} 
                 onTextChange={this.handleFirstNameChange} 
