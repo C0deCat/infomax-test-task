@@ -5,6 +5,7 @@ import PasswordInput from './PasswordInput';
 import '../css/SignInForm.css'
 import TextInput from './TextInput';
 import { Link } from 'react-router-dom';
+import Message from './Message';
 
 class AuthForm extends Component {
     constructor(props) {
@@ -31,6 +32,10 @@ class AuthForm extends Component {
                 value: '',
                 isConfirmed: true,
             },
+            message: {
+                value: '',
+                isError: false,
+            }
         }
 
         this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
@@ -145,7 +150,7 @@ class AuthForm extends Component {
         && this.state.confirmationPassword.isConfirmed;
 
         if(isFormValid) {
-            fetch('http://localhost:4000/api', {
+            fetch(process.env.REACT_APP_API, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -159,18 +164,61 @@ class AuthForm extends Component {
                 }),
             })
             .then((res) => res.json())
-            .then((result) => console.log(result));
+            .catch((reason) => {
+                this.setState({
+                    message: {
+                        value: "Отсутствует соединение с сервером!",
+                        isError: true,
+                    }
+                })
+            })
+            .then((result) => {
+                if(result.errors) {
+                    this.setState({
+                        message: {
+                            value: "Пользователь с такой электронной почтой уже существует!",
+                            isError: true,
+                        }
+                    })
+                }
+                else {
+                    this.setState({
+                        firstName: {
+                            value: '',
+                            isValid: true,
+                        },
+                        lastName: {
+                            value: '',
+                            isValid: true,
+                        },
+                        email: {
+                            value: '',
+                            isValid: true,
+                        },
+                        password: {
+                            value: '',
+                            isValid: true,
+                        },
+                        confirmationPassword: {
+                            value: '',
+                            isConfirmed: true,
+                        },
+                        message: {
+                            value: "Вы успешно зарегистрированы!",
+                            isError: false,
+                        },
+                    });
+                }
+            });
         } 
-        else {
-            console.log("Fuck u!")
-        }
     }
 
     render() {
         const nameErrorMessage = "Поле не должно быть пустым!"
         const emailErrorMessage = "Некорректно введен Email!"
         const passwordErrorMessage = "Пароль должен содержать минимум восемь символов, цифры, строчные и заглавные буквы и небуквенные символы (!, @, ? и т.п.)";
-        const confirmPasswordErrorMessage = "Пароли не одинаковы!"; 
+        const confirmPasswordErrorMessage = "Пароли не одинаковы!";
+        const messageElem = this.state.message.value !== '' ? <Message message={this.state.message.value} isError={this.state.message.isError} /> : '';
         return ( 
             <form className='formContainer' onSubmit={this.handleSubmit}>
                 <h1 className='formContainer_header'>Регистрация</h1>
@@ -201,6 +249,7 @@ class AuthForm extends Component {
 
                 <Button value="Применить и войти" />
                 <div className='formContainer_textCaption'>Уже зарегистрированы? <Link to="/" className='formContainer_link'>Вход</Link></div>
+                {messageElem}
             </form>
          );
     }

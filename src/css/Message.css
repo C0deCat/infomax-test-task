@@ -1,0 +1,24 @@
+.messageContainer {
+    margin-top: 24px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    padding: 24px 48px;
+    box-sizing: border-box;
+    margin-left: -48px;
+    margin-right: -48px;
+    background-color: #e8ffdb;
+}
+
+.messageContainer_error {
+    background-color: #FFE9DB;
+}
+
+.messageContainer_error::before {
+    content: url("../imgs/Sign.svg");
+    display: block;
+    float: left;
+    margin-right: 24px;
+}
