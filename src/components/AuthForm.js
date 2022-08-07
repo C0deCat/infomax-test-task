@@ -164,14 +164,6 @@ class AuthForm extends Component {
                 }),
             })
             .then((res) => res.json())
-            .catch((reason) => {
-                this.setState({
-                    message: {
-                        value: "Отсутствует соединение с сервером!",
-                        isError: true,
-                    }
-                })
-            })
             .then((result) => {
                 if(result.errors) {
                     this.setState({
@@ -209,6 +201,14 @@ class AuthForm extends Component {
                         },
                     });
                 }
+            })
+            .catch((reason) => {
+                this.setState({
+                    message: {
+                        value: "Отсутствует соединение с сервером!",
+                        isError: true,
+                    }
+                })
             });
         } 
     }

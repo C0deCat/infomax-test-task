@@ -10,18 +10,22 @@ import {
 } from "react-router-dom";
 import SignInForm from './components/SignInForm';
 import AuthForm from './components/AuthForm';
+import store from './store';
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/*' element={<SignInAuthRoute />}>
-          <Route index element={<SignInForm />} />
-          <Route path='auth' element={<AuthForm />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/*' element={<SignInAuthRoute />}>
+            <Route index element={<SignInForm />} />
+            <Route path='auth' element={<AuthForm />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
