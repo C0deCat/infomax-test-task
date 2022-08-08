@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Drawer from './Drawer';
 import NavBar from './NavBar';
 
+
 class Menu extends Component {
     constructor(props) {
         super(props);
@@ -33,5 +34,5 @@ class Menu extends Component {
         );
     }
 }
- 
+
 export default Menu;
