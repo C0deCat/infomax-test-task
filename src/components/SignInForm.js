@@ -3,7 +3,7 @@ import Button from './Button';
 import EmailInput from './EmailInput';
 import PasswordInput from './PasswordInput';
 import '../css/SignInForm.css'
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { connect } from "react-redux";
 import { setUser } from "../slices/currentUserSlice";
 import Message from './Message';
@@ -99,6 +99,7 @@ class SignInForm extends Component {
                 <Button value="Войти в систему" />
                 <div className='formContainer_textCaption'><Link to="/auth" className='formContainer_link'>Зарегистрироваться</Link></div>
                 {messageElem}
+                {this.props.token !== '' ? <Navigate to="/profile" replace={true} /> : ''}
             </form>
          );
     }

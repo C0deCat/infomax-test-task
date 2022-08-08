@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
 
+html {
+  height: 100%;
+}
+
 body {
   background: linear-gradient(229.68deg, #6879BB 7.06%, #9300BB 95.23%);
   background-attachment: fixed;
   margin: 0;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
 }

@@ -1,0 +1,6 @@
+.siteContainer {
+    background: #EBF2FB;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}

@@ -1,0 +1,27 @@
+.menuContainer__navigation {
+    height: 60px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 10px rgba(104, 121, 187, 0.1);
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    color: #6879BB;
+    display: flex;
+    align-items: center;
+}
+
+.menuContainer__navigationItem {
+    height: 100%;
+    cursor: pointer;
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.menuContainer__navigationIcon {
+    margin-right: 12px;
+}

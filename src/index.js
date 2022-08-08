@@ -12,6 +12,7 @@ import SignInForm from './components/SignInForm';
 import AuthForm from './components/AuthForm';
 import store from './store';
 import { Provider } from 'react-redux';
+import ProfileRoute from './routes/ProfileRoute';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,6 +24,7 @@ root.render(
             <Route index element={<SignInForm />} />
             <Route path='auth' element={<AuthForm />} />
           </Route>
+          <Route path='profile' element={ <ProfileRoute /> } />
         </Routes>
       </BrowserRouter>
     </Provider>
