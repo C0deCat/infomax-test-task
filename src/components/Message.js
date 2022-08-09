@@ -1,9 +1,9 @@
 import '../css/Message.css'
 
 function Message(props) {
-    const classes = props.isError ? 'messageContainer_error' : ''
+    const classes = props.isError ? 'messageContainer_error ' : ''
     return ( 
-        <div className={'messageContainer '.concat(classes)} >{props.message}</div>
+        <div className={'messageContainer '.concat(classes, props.containerClasses)} >{props.message}</div>
      );
 }
 

@@ -16,6 +16,8 @@
     outline: none;
     margin-top: 12px;
     margin-bottom: 12px;
+    cursor: pointer;
+    color: #333333;
 }
 
 .button:hover {
@@ -32,4 +34,20 @@
     background: #FFCE0C;
     border: 1px solid #FFFBEA;
     box-shadow: 0px 1px 10px #FFD73B;
+}
+
+.button:disabled {
+   opacity: 0.5;
+   cursor: auto;
+}
+
+.button:disabled:hover {
+    background: #FFCE0C;
+    box-shadow: none;
+}
+
+.button:disabled:active {
+    background: #FFCE0C;
+    box-shadow: none;
+    border: none;
 }

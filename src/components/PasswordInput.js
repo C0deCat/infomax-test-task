@@ -1,6 +1,14 @@
 import React from 'react';
 import '../css/PasswordInput.css'
 
+//Пропсы
+//isError - подсвечивать поле как ошибку или нет
+//ErrorMessage - cообщение ошибки
+//value - значение
+//placeholder - полупрозрачная подсказка в текстовом поле
+//onPasswordChange - обработчик событий изменения пароля
+//containerClasses - классы, добавляемые к контейнеру
+
 class PasswordInput extends React.Component {
     constructor(props) {
         super(props);
@@ -31,12 +39,14 @@ class PasswordInput extends React.Component {
             classes = classes.concat('passwordInput__error')
         } 
         return ( 
-            <div className='passwordContainer'>
-            <input 
+            <div className={'passwordContainer '.concat(this.props.containerClasses)}>
+            <input
+                {...this.props.input} 
                 type={type} className={'passwordInput '.concat(classes)} 
                 placeholder={this.props.placeholder ? this.props.placeholder : "Пароль"}
                 value={this.props.value}
                 onChange={this.handleChange}
+                name={this.props.name}
             />
             <span className={'passwordVisibilityToggle '.concat(visibilityIcon)} onClick={this.handleClick}></span>
             <span className='passwordContainer_errorMessage'>{this.props.isError ? this.props.ErrorMessage : ''}</span>

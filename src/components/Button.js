@@ -3,7 +3,7 @@ import '../css/Button.css'
 
 function Button(props) {
     return ( 
-        <button className='button'>{props.value}</button>
+        <button className='button' disabled={props.isDisabled}>{props.value}</button>
      );
 }
 

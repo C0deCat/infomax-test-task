@@ -1,0 +1,39 @@
+.profileForm {
+    margin: 0 22px;
+}
+
+.profileForm__header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 18px 0 6px 0;
+}
+
+.profileForm__headerCaption {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+    color: #404064;
+    margin: 0;
+}
+
+.profileForm__inputsBox {
+    background: #FFFFFF;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.inputContainer_profile {
+    margin-bottom: 0;
+    flex-basis: 435px;
+}
+
+.messageContainer_profile {
+    margin-left: -24px;
+    margin-right: -24px;
+}

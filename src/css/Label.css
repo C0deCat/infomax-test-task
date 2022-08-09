@@ -1,0 +1,21 @@
+.labelBlock {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.labelBlock__label {
+    flex-basis: 261px;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #999999;
+}
+
+@media (max-width: 600px) {
+    .labelBlock {
+        flex-wrap: wrap;
+    }
+}
