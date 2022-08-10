@@ -25,8 +25,8 @@ function Drawer(props) {
                     <img src={menuIconLight} alt='' className='menuContainer__sidebarIcon'/>
                     <img src={productName} alt=''/>
                 </div>
-                <MenuItem icon={userIcon} caption={username} />
-                <MenuItem icon={chartIcon} caption='Список процессов' />
+                <MenuItem icon={userIcon} caption={username} linkTo="/profile" />
+                <MenuItem icon={chartIcon} caption='Список процессов' linkTo="/processes" />
             </div>
             <div className='menuContainer_overlayFreeSpace' onClick={handleClickOverlay} ></div>
         </div>
