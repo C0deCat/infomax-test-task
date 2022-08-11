@@ -26,58 +26,6 @@ class AuthForm extends Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
 
-
-    sendRequest() {
-        const isFormValid = this.state.firstName.isValid 
-        && this.state.lastName.isValid 
-        && this.state.email.isValid 
-        && this.state.password.isValid 
-        && this.state.confirmationPassword.isConfirmed;
-
-        if(isFormValid) {
-            fetch(process.env.REACT_APP_API, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    query: `
-                    mutation {
-                        signup(firstName: "${this.state.firstName.value}", secondName: "${this.state.lastName.value}", email: "${this.state.email.value}", password: "${this.state.password.value}")
-                    }
-                    `,
-                }),
-            })
-            .then((res) => res.json())
-            .then((result) => {
-                if(result.errors) {
-                    this.setState({
-                        message: {
-                            value: "Пользователь с такой электронной почтой уже существует!",
-                            isError: true,
-                        }
-                    })
-                }
-                else {
-                    this.setState({
-                        message: {
-                            value: "Вы успешно зарегистрированы!",
-                            isError: false,
-                        },
-                    });
-                }
-            })
-            .catch((reason) => {
-                this.setState({
-                    message: {
-                        value: "Отсутствует соединение с сервером!",
-                        isError: true,
-                    }
-                })
-            });
-        } 
-    }
-
     onSubmit(values, form) {
         fetch(process.env.REACT_APP_API, {
             method: 'POST',
