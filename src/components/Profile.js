@@ -35,7 +35,7 @@ class Profile extends Component {
             body: JSON.stringify({
                 query: `
                 mutation {
-                    editUser(id: ${this.props.user.id}, email: "${values.email}", firstName: "${values.firstName}", secondName: "${values.lastName}"${values.password ? ", password: ".concat(values.password) : ""}) {
+                    editUser(id: ${this.props.user.id}, email: "${values.email}", firstName: "${values.firstName}", secondName: "${values.lastName}"${values.password ? ', password: "' + values.password + '"' : ""}) {
                         firstName
                         secondName
                         email
@@ -82,7 +82,7 @@ class Profile extends Component {
           return undefined;
         }
         else {
-          return "Пароль должен содержать минимум восемь символов, цифры, строчные и заглавные буквы и небуквенные символы (!, @, ? и т.п.)";
+          return "Пароль должен содержать минимум восемь символов, цифры, латинские строчные и заглавные буквы и небуквенные символы (!, @, ? и т.п.)";
         }
     }
 
@@ -187,7 +187,7 @@ class Profile extends Component {
                                         input={props.input}
                                         containerClasses="inputContainer_profile"
                                         onPasswordChange={props.input.onChange}
-                                        isError={ props.meta.invalid && props.meta.touched }
+                                        isError={ props.meta.invalid }
                                         ErrorMessage={ props.meta.error }
                                         value={props.input.value}
                                         />
