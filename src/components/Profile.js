@@ -17,7 +17,7 @@ class Profile extends Component {
         this.validateEmail = this.validateEmail.bind(this);
         this.validatePassword = this.validatePassword.bind(this);
         this.validateTextFields = this.validateTextFields.bind(this);
-        this.validateConfirmPassword = this.validateConfirmPassword.bind(this);
+        this.validateForm = this.validateForm.bind(this);
 
         this.state = {
             buttonCaption: "Сохранить",
@@ -102,10 +102,12 @@ class Profile extends Component {
         return text.length > 0 && value !== undefined ? undefined : "Поле не должно быть пустым!"
     }
 
-    validateConfirmPassword(password) {
-        return function(value) {
-            return password === value ? undefined : "Пароли не одинаковы!"
+    validateForm(values) {
+        const errors = {}
+        if (values.password !== values.confirmPassword) {
+            errors.confirmPassword = "Пароли не одинаковы!";
         }
+        return errors
     }
 
     render() {
@@ -113,6 +115,7 @@ class Profile extends Component {
 
         return (
             <Form onSubmit={this.onSubmit}
+            validate={this.validateForm}
             initialValues={{
                 firstName: this.props.user.firstName,
                 lastName: this.props.user.secondName,
@@ -176,7 +179,7 @@ class Profile extends Component {
                                     </Label>
                                 )}
                             </Field>
-                            <Field name='confirmPassword' validate={this.validateConfirmPassword(values.password)}>
+                            <Field name='confirmPassword'>
                                 {props => (
                                     <Label value="Повторить пароль">
                                         <PasswordInput placeholder="Не задано" 
