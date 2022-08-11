@@ -134,7 +134,6 @@ class Profile extends Component {
                                     onTextChange={props.input.onChange}
                                     isError={props.meta.invalid && props.meta.touched}
                                     ErrorMessage={props.meta.error}
-                                    value={props.input.value}
                                     />
                                     </Label>
                                 )}
@@ -147,7 +146,6 @@ class Profile extends Component {
                                     onTextChange={props.input.onChange}
                                     isError={props.meta.invalid && props.meta.touched}
                                     ErrorMessage={props.meta.error}
-                                    value={props.input.value}
                                     />
                                     </Label>
                                 )}
@@ -161,7 +159,6 @@ class Profile extends Component {
                                         onEmailChange={props.input.onChange} 
                                         isError={props.meta.invalid && props.meta.touched}
                                         ErrorMessage={props.meta.error}
-                                        value={props.input.value}
                                         />
                                     </Label>
                                 )}
@@ -175,7 +172,6 @@ class Profile extends Component {
                                         onPasswordChange={props.input.onChange}
                                         isError={ props.meta.invalid && props.meta.touched }
                                         ErrorMessage={ props.meta.error }
-                                        value={props.input.value}
                                         />
                                     </Label>
                                 )}
@@ -189,7 +185,6 @@ class Profile extends Component {
                                         onPasswordChange={props.input.onChange}
                                         isError={ props.meta.invalid }
                                         ErrorMessage={ props.meta.error }
-                                        value={props.input.value}
                                         />
                                     </Label>
                                 )}

@@ -24,9 +24,7 @@ function TextInput(props) {
         <div className={'inputContainer '.concat(props.containerClasses)}>
             <input className={'textInput '.concat(classes)} type="text" placeholder={props.placeholder}
             {...props.input}
-            value={props.value}
-            onChange={handleChange} 
-            name={props.name} />
+            onChange={handleChange}  />
             <span className='inputContainer_errorMessage'>{props.isError ? props.ErrorMessage : ''}</span>
         </div> 
      );

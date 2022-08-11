@@ -35,8 +35,6 @@ class EmailInput extends React.Component {
                     type="email" className={'emailInput '.concat(classes)} 
                     placeholder={this.props.placeholder ? this.props.placeholder : "Электронная почта"}
                     onChange={this.handleChange}
-                    value={this.props.value}
-                    name={this.props.name}
                 />
                 <span className='emailInputContainer_errorMessage'>{this.props.isError ? this.props.ErrorMessage : ''}</span>
             </div>
