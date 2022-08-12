@@ -4,6 +4,21 @@ html {
   height: 100%;
 }
 
+html::-webkit-scrollbar {
+  width: 12px;
+  background: #AFB9D7;
+  border-radius: 2px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #8B99C9;
+  border-radius: 20px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #727da3;
+}
+
 body {
   background: linear-gradient(229.68deg, #6879BB 7.06%, #9300BB 95.23%);
   background-attachment: fixed;
