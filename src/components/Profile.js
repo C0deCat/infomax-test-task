@@ -122,11 +122,11 @@ class Profile extends Component {
                 email: this.props.user.email
             }}
             render={
-                ({ handleSubmit, form, submitting, pristine, values, hasValidationErrors }) => (
+                ({ handleSubmit, submitting, pristine, hasValidationErrors }) => (
                     <form className='profileForm' onSubmit={handleSubmit}>
                         <div className='profileForm__header'>
                             <h1 className='profileForm__headerCaption'>{this.props.user.firstName + " " + this.props.user.secondName}. Редактирование</h1>
-                            <Button value={this.state.buttonCaption} type="submit" isDisabled={pristine || hasValidationErrors} />
+                            <Button value={this.state.buttonCaption} type="submit" isDisabled={pristine || hasValidationErrors || submitting} />
                         </div>
                         <div className='profileForm__inputsBox'>
                             <Field name='firstName' validate={this.validateTextFields}>

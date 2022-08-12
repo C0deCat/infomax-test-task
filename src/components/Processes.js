@@ -1,6 +1,6 @@
 import '../css/Processes.css';
 import ProcessItem from "./processItem";
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import React, { useState, useEffect } from 'react';
 import Message from './Message';
 
@@ -42,7 +42,7 @@ function Processes() {
         .catch(() => {
             setErrorMessage("Нет соединения с сервером!")
         });
-    }, []);
+    }, [token]);
 
     const processListItems = processList.map((process) => 
         <ProcessItem 
