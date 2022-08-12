@@ -1,5 +1,8 @@
 import './Label.css';
 
+//props
+//value[str] - label caption
+//children[JSX] - react and html component putted inside label block
 function Label(props) {
     return (
         <div className="labelBlock">

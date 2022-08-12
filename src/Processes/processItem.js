@@ -21,7 +21,15 @@ function declOfNum(number, words) {
 }
 
 //props
-//name - process name
+//name[str] - process name
+//numberOfExecutions[Num] - number of executions
+//averageLeadTime[str] - average lead time. Duration, comes in milliseconds
+//averageActiveTime[str] - average active time. Duration, comes in milliseconds
+//employeesInvolvedProcess[num] - employees Involved in Process.
+//numberOfScenarios[num] - number Of Scenarios
+//start[str] - process start date. Comes in unix timestamp(seconds)
+//end[str] - process end date. Comes in unix timestamp(seconds)
+//loading[str] - process loading date. Comes in unix timestamp(seconds)
 
 function ProcessItem(props) {
     moment.locale('ru');

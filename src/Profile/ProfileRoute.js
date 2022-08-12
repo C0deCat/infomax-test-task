@@ -4,6 +4,10 @@ import Profile from './Profile';
 import { connect } from "react-redux";
 import { Navigate } from 'react-router-dom';
 
+//props
+//token[str] - prop loaded from redux store. Contains current user bearer token
+//user[obj] - prop loaded from redux store. Contains current user data  
+
 class ProfileRoute extends Component {
     render() { 
         return (

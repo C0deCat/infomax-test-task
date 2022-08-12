@@ -10,6 +10,11 @@ import { Form, Field } from 'react-final-form';
 import { setUser } from "../store/currentUserSlice";
 import Message from '../common/Message';
 
+//props
+//token[str] - prop loaded from redux store. Contains current user bearer token
+//user[obj] - prop loaded from redux store. Contains current user data  
+//dispatch[func] - function for interaction with redux store
+
 class Profile extends Component {
     constructor(props) {
         super(props);
