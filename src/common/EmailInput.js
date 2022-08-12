@@ -2,13 +2,14 @@ import React from 'react';
 import './EmailInput.css'
 
 
-//Пропсы
-//isError - подсвечивать поле как ошибку или нет
-//ErrorMessage - cообщение ошибки
-//value - значение
-//placeholder - полупрозрачная подсказка в текстовом поле
-//onEmailChange - обработчик событий изменения email
-//containerClasses - классы, добавляемые к контейнеру
+//props
+//onEmailChange[func] - event on change email input value
+//input[Obj] - pile of props derived from FinalForm Field component. Contains value, name, etc.
+//isError[bool] - whether field has error or not
+//ErrorMessage[str] - error message. Shows only if isError=true
+//placeholder[str] - text hint inside input. Default value: "Электронная почта"
+//containerClasses[str] - contains classes' names for customization purposes
+
 
 
 class EmailInput extends React.Component {

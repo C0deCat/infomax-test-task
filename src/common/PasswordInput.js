@@ -1,13 +1,13 @@
 import React from 'react';
 import './PasswordInput.css'
 
-//Пропсы
-//isError - подсвечивать поле как ошибку или нет
-//ErrorMessage - cообщение ошибки
-//value - значение
-//placeholder - полупрозрачная подсказка в текстовом поле
-//onPasswordChange - обработчик событий изменения пароля
-//containerClasses - классы, добавляемые к контейнеру
+//props
+//onPasswordChange[func] - event on change password input value
+//input[Obj] - pile of props derived from FinalForm Field component. Contains value, name, etc.
+//isError[bool] - whether field has error or not
+//ErrorMessage[str] - error message. Shows only if isError=true
+//placeholder[str] - text hint inside input. Default value: "Пароль"
+//containerClasses[str] - contains classes' names for customization purposes
 
 class PasswordInput extends React.Component {
     constructor(props) {

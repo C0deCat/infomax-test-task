@@ -2,14 +2,13 @@ import React from 'react';
 import './TextInput.css'
 
 
-//Пропсы
-//isError - подсвечивать поле как ошибку или нет
-//ErrorMessage - cообщение ошибки
-//value - значение
-//placeholder - полупрозрачная подсказка в текстовом поле
-//onTextChange - обработчик событий изменения текстового поля
-//containerClasses - классы, добавляемые к контейнеру
-//name - имя
+//props
+//onTextChange[func] - event on change text input value
+//input[Obj] - pile of props derived from FinalForm Field component. Contains value, name, etc.
+//isError[bool] - whether field has error or not
+//ErrorMessage[str] - error message. Shows only if isError=true
+//placeholder[str] - text hint inside input.
+//containerClasses[str] - contains classes' names for customization purposes
 
 
 function TextInput(props) {

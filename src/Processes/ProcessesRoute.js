@@ -4,6 +4,10 @@ import { connect } from "react-redux";
 import { Navigate } from 'react-router-dom';
 import Processes from './Processes';
 
+//props
+//token[str] - prop loaded from redux store. Contains current user bearer token
+//user[obj] - prop loaded from redux store. Contains current user data  
+
 class ProcessesRoute extends Component {
     render() { 
         return (

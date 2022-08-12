@@ -6,6 +6,10 @@ import userIcon from '../imgs/userIcon.svg';
 import chartIcon from '../imgs/chartIcon.svg';
 import { useSelector } from 'react-redux';
 
+//props 
+//isVisible[bool] - whether draw menu is shown or not 
+
+
 function Drawer(props) {
 
     function handleClickOverlay() {

@@ -1,6 +1,9 @@
 import menuIconDark from '../imgs/menuIconDark.svg'
 import './NavBar.css'
 
+
+//props
+//onClick[func] - hadler function for onClick event. Used for opening draw menu
 function NavBar(props) {
     function handleClick() {
         props.onClick();

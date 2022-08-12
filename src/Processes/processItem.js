@@ -3,6 +3,7 @@ import './ProcessItem.css'
 import moment from 'moment';
 import 'moment/locale/ru';
 
+//return duration in hours and minutes
 function getDuration(durationInMs) {
     const duration = moment.duration(durationInMs);
     const totalHours = Math.floor(duration.asHours());
@@ -14,9 +15,13 @@ function getDuration(durationInMs) {
     return hoursString + " " + minutesString;
 }
 
+//accept number and word in different declination. Return declination acceptable for number. 
 function declOfNum(number, words) {  
     return words[(number % 100 > 4 && number % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(number % 10 < 5) ? Math.abs(number) % 10 : 5]];
 }
+
+//props
+//name - process name
 
 function ProcessItem(props) {
     moment.locale('ru');
