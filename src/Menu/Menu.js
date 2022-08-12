@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Drawer from './Drawer';
 import NavBar from './NavBar';
+import './Menu.css';
 
 
 class Menu extends Component {
