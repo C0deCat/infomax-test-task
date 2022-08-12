@@ -22,7 +22,7 @@ function Drawer(props) {
         <div className={'menuContaier__overlay '.concat(overlayVisible)} >
             <div className={'menuContainer__sidebar '.concat(sidebarSlideIn)}>
                 <div className='menuContainer__sidebarHeader'>
-                    <img src={menuIconLight} alt='' className='menuContainer__sidebarIcon'/>
+                    <img src={menuIconLight} alt='' className='menuContainer__sidebarIcon' onClick={handleClickOverlay} />
                     <img src={productName} alt=''/>
                 </div>
                 <MenuItem icon={userIcon} caption={username} linkTo="/profile" />
