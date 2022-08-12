@@ -39,3 +39,9 @@
     color: #404064;
     margin-top: 6px;
 }
+
+@media (max-width: 450px) {
+    .formContainer {
+        width: 100%;
+    }
+}
