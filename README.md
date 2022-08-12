@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-##Before we start
+## Before we start
 Clone the project repository by running next command:
 ```bash
 git clone https://github.com/C0deCat/infomax-test-task.git
