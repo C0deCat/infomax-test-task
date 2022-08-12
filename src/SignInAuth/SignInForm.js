@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import Button from './Button';
-import EmailInput from './EmailInput';
-import PasswordInput from './PasswordInput';
-import '../css/SignInForm.css'
+import Button from '../common/Button';
+import EmailInput from '../common/EmailInput';
+import PasswordInput from '../common/PasswordInput';
 import { Link, Navigate } from 'react-router-dom';
 import { connect } from "react-redux";
-import { setUser } from "../slices/currentUserSlice";
-import Message from './Message';
+import { setUser } from "../store/currentUserSlice";
+import Message from '../common/Message';
 import { Form, Field } from 'react-final-form';
 
 class SignInForm extends Component {

@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './css/index.css';
-import SignInAuthRoute from './routes/SignInAuthRoute';
+import './index.css';
+import SignInAuthRoute from './SignInAuth/SignInAuthRoute';
 import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
-import SignInForm from './components/SignInForm';
-import AuthForm from './components/AuthForm';
-import store from './store';
+import SignInForm from './SignInAuth/SignInForm';
+import AuthForm from './SignInAuth/AuthForm';
+import store from './store/store';
 import { Provider } from 'react-redux';
-import ProfileRoute from './routes/ProfileRoute';
-import ProcessesRoute from './routes/ProcessesRoute';
+import ProfileRoute from './Profile/ProfileRoute';
+import ProcessesRoute from './Processes/ProcessesRoute';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

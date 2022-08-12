@@ -1,5 +1,5 @@
 import menuIconDark from '../imgs/menuIconDark.svg'
-import '../css/NavBar.css'
+import './NavBar.css'
 
 function NavBar(props) {
     function handleClick() {
@@ -7,8 +7,8 @@ function NavBar(props) {
     }
 
     return ( 
-        <div className='menuContainer__navigation' onClick={handleClick}>
-            <div className='menuContainer__navigationItem'>
+        <div className='menuContainer__navigation'>
+            <div className='menuContainer__navigationItem' onClick={handleClick}>
                 <img src={menuIconDark} alt='' className='menuContainer__navigationIcon'/>
                 <span className='menuContainer__navigationItemCaption'>Меню</span>
             </div>

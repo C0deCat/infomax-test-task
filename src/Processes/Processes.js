@@ -1,8 +1,8 @@
-import '../css/Processes.css';
+import './Processes.css';
 import ProcessItem from "./processItem";
 import { useSelector } from 'react-redux'
 import React, { useState, useEffect } from 'react';
-import Message from './Message';
+import Message from '../common/Message';
 
 function Processes() {
     const token = useSelector(state => state.currentUser.token);

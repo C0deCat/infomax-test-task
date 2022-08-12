@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import Menu from '../components/Menu';
-import Profile from '../components/Profile';
-import '../css/ProfileRoute.css'
+import Menu from '../Menu/Menu';
 import { connect } from "react-redux";
 import { Navigate } from 'react-router-dom';
+import Processes from './Processes';
 
-class ProfileRoute extends Component {
+class ProcessesRoute extends Component {
     render() { 
         return (
             <div className='siteContainer'>
                 {this.props.token === '' ? <Navigate to="/" replace={true}/> : ''}
                 <Menu />
-                <Profile />
+                <Processes />
             </div>
         );
     }
@@ -22,4 +21,4 @@ const mapStateToProps = (state) => ({
     user: state.currentUser.user,
 });
 
-export default connect(mapStateToProps)(ProfileRoute);
+export default connect(mapStateToProps)(ProcessesRoute);

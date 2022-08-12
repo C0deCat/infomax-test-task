@@ -1,5 +1,5 @@
 import MenuItem from './MenuItem';
-import '../css/Drawer.css';
+import './Drawer.css';
 import menuIconLight from '../imgs/menuIconLight.svg';
 import productName from '../imgs/productName.svg';
 import userIcon from '../imgs/userIcon.svg';

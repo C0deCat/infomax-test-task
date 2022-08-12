@@ -1,4 +1,4 @@
-import '../css/Message.css'
+import './Message.css'
 
 function Message(props) {
     const classes = props.isError ? 'messageContainer_error ' : ''

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import Button from './Button';
-import EmailInput from './EmailInput';
-import PasswordInput from './PasswordInput';
-import '../css/SignInForm.css'
-import TextInput from './TextInput';
+import Button from '../common/Button';
+import EmailInput from '../common/EmailInput';
+import PasswordInput from '../common/PasswordInput';
+import TextInput from '../common/TextInput';
 import { Link } from 'react-router-dom';
-import Message from './Message';
+import Message from '../common/Message';
 import { Form, Field } from 'react-final-form';
 
 class AuthForm extends Component {

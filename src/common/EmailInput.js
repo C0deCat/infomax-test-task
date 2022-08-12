@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/EmailInput.css'
+import './EmailInput.css'
 
 
 //Пропсы

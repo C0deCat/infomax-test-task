@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/PasswordInput.css'
+import './PasswordInput.css'
 
 //Пропсы
 //isError - подсвечивать поле как ошибку или нет

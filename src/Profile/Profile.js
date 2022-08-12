@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import Button from './Button';
-import EmailInput from './EmailInput';
-import PasswordInput from './PasswordInput';
-import TextInput from './TextInput';
-import '../css/Profile.css';
+import Button from '../common/Button';
+import EmailInput from '../common/EmailInput';
+import PasswordInput from '../common/PasswordInput';
+import TextInput from '../common/TextInput';
+import './Profile.css';
 import Label from './Label';
 import { Form, Field } from 'react-final-form';
-import { setUser } from "../slices/currentUserSlice";
-import Message from './Message';
+import { setUser } from "../store/currentUserSlice";
+import Message from '../common/Message';
 
 class Profile extends Component {
     constructor(props) {

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import '../css/ProcessItem.css'
+import './ProcessItem.css'
 import moment from 'moment';
 import 'moment/locale/ru';
 

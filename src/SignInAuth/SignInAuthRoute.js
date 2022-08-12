@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Logo from '../components/Logo';
-import '../css/signInAuthRoute.css'
+import Logo from './Logo';
+import './signInAuthRoute.css'
 import { Outlet } from "react-router-dom";
 
 class SignInAuthRoute extends Component {

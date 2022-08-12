@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/TextInput.css'
+import './TextInput.css'
 
 
 //Пропсы
