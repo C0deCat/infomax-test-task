@@ -30,7 +30,7 @@ class Profile extends Component {
         }
     }
     
-    onSubmit(values) {
+    onSubmit(values, form) {
         fetch(process.env.REACT_APP_API, {
             method: 'POST',
             headers: {
@@ -63,6 +63,7 @@ class Profile extends Component {
             }
 
             this.props.dispatch(setUser(newUserData));
+            form.reset();
             this.setState({
                 buttonCaption: "Сохранено",
                 errorMessage: ""
